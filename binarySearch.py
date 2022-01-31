@@ -17,18 +17,21 @@ def binarySearchRec(A: list, x: int) -> int:
 
 # Iterative Function
 def binarySearchIter(A: list, x: int) -> int:
-    n = len(A)
-    high = 0
+    n = len(nums)
+    low = 0
+    high = n
     mid = n//2
-    low = n-1
-    while 0 <= mid < n:
-        mid = (high + low + 1)//2
-        if x < A[mid]:
-            low = mid - 1
-        elif x > A[mid]:
-            high = mid
+    while high > 0 and low < n:
+        mid = (low + high)//2
+        # print(low, mid, high)
+        if target < nums[mid]:
+            high = mid - 1
+        elif target > nums[mid]:
+            low = mid + 1
         else:
             return mid
+        if mid == (low + high)//2:
+            break
     return -1
 
 
