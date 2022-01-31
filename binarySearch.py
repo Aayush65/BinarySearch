@@ -21,9 +21,7 @@ def binarySearchIter(A: list, x: int) -> int:
     low = 0
     high = n
     mid = n//2
-    while high > 0 and low < n:
-        mid = (low + high)//2
-        # print(low, mid, high)
+    while -1 < mid < n:
         if target < nums[mid]:
             high = mid - 1
         elif target > nums[mid]:
@@ -32,7 +30,10 @@ def binarySearchIter(A: list, x: int) -> int:
             return mid
         if mid == (low + high)//2:
             break
+        else:
+            mid = (low + high)//2
     return -1
+
 
 
 if __name__ == '__main___':
